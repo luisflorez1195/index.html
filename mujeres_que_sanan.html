@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mujeres que Sanan · Mi Psicóloga Me Dijo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rosa:        #f2c4ce;
+  --rosa-mid:    #d4809a;
+  --rosa-deep:   #8a2845;
+  --lila:        #e0d4f0;
+  --lila-mid:    #9070c0;
+  --menta:       #c4e8d8;
+  --menta-mid:   #389060;
+  --melocoton:   #fae0d0;
+  --crema:       #fafaf7;
+  --text:        #2a1020;
+  --text-soft:   #6a3048;
+  --white:       #ffffff;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--crema); color: var(--text); overflow-x: hidden; font-size: 16px; line-height: 1.6; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+.eyebrow { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--rosa-mid); font-weight: 300; display: block; margin-bottom: 16px; }
+
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 48px); line-height: 1.1; color: var(--rosa-deep); margin-bottom: 20px; }
+.section-title em  { font-style: italic; font-weight: 400; }
+.section-title strong { font-weight: 700; font-style: normal; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; padding: 18px 32px; display: flex; justify-content: space-between; align-items: center; background: rgba(250,247,245,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(210,170,185,0.25); }
+.nav-brand { font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; color: var(--rosa-deep); text-decoration: none; }
+.nav-link { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-soft); text-decoration: none; font-weight: 300; transition: color 0.25s; }
+.nav-link:hover { color: var(--rosa-deep); }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 24px 80px; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 80% 20%, rgba(224,212,240,0.55) 0%, transparent 70%), radial-gradient(ellipse 50% 60% at 10% 80%, rgba(196,232,216,0.4) 0%, transparent 70%), linear-gradient(160deg, #fdeef4 0%, #f8e4ee 50%, #f0dce8 100%); z-index: 0; }
+.hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; width: 100%; }
+.hero-tag { display: inline-block; background: var(--rosa); color: var(--rosa-deep); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; padding: 6px 18px; border-radius: 30px; font-weight: 400; margin-bottom: 32px; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 68px); line-height: 1.04; color: var(--rosa-deep); margin-bottom: 28px; }
+.hero-title em { font-style: italic; font-weight: 400; }
+.hero-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(16px, 2vw, 20px); color: var(--text-soft); line-height: 1.65; margin-bottom: 36px; font-weight: 300; }
+.hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px; }
+.pill { background: var(--white); border: 1px solid rgba(210,170,185,0.45); border-radius: 30px; padding: 8px 18px; font-size: 13px; color: var(--text-soft); font-weight: 300; }
+.btn { display: inline-block; padding: 18px 44px; border-radius: 50px; font-size: 15px; font-weight: 400; text-decoration: none; letter-spacing: 0.5px; transition: transform 0.25s, box-shadow 0.25s, background 0.25s; }
+.btn-primary { background: var(--rosa-deep); color: var(--white); }
+.btn-primary:hover { background: #a03358; transform: translateY(-3px); box-shadow: 0 10px 28px rgba(138,40,69,0.28); }
+.btn-ghost { border: 1.5px solid var(--rosa-mid); color: var(--rosa-deep); margin-left: 16px; }
+.btn-ghost:hover { background: var(--rosa); transform: translateY(-2px); }
+.hero-price-note { margin-top: 20px; font-size: 12px; color: var(--text-soft); opacity: 0.65; font-weight: 300; letter-spacing: 0.5px; }
+
+/* HERO IMAGE */
+.hero-img-wrap { position: relative; }
+.hero-img { width: 100%; height: 560px; object-fit: cover; object-position: center top; border-radius: 24px 80px 24px 80px; display: block; box-shadow: 16px 24px 56px rgba(138,40,69,0.18); }
+.hero-img-badge { position: absolute; bottom: 32px; left: -24px; background: var(--white); border-radius: 16px; padding: 16px 22px; box-shadow: 0 8px 32px rgba(138,40,69,0.14); border: 1px solid rgba(210,170,185,0.3); min-width: 140px; }
+.hero-img-badge-num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 26px; color: var(--rosa-deep); line-height: 1; }
+.hero-img-badge-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-soft); opacity: 0.6; margin-top: 4px; font-weight: 300; }
+.hero-img-tag { position: absolute; top: 24px; right: -16px; background: var(--rosa-deep); color: white; border-radius: 30px; padding: 8px 18px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; font-weight: 300; }
+
+/* FRANJA */
+.franja { background: var(--rosa-deep); padding: 22px 0; overflow: hidden; }
+.franja-track { display: flex; gap: 56px; animation: marquee 22s linear infinite; white-space: nowrap; width: max-content; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.franja-item { font-family: 'Playfair Display', serif; font-style: italic; font-size: 16px; color: rgba(255,255,255,0.78); flex-shrink: 0; }
+.franja-sep { color: rgba(255,200,215,0.45); font-style: normal; }
+
+/* SERVICIOS */
+.servicios { padding: 110px 24px; background: var(--white); }
+.servicios-header { text-align: center; margin-bottom: 64px; }
+.servicios-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: var(--text-soft); font-weight: 300; max-width: 520px; margin: 0 auto; line-height: 1.65; }
+.servicios-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+.servicio-card { background: var(--crema); border-radius: 20px; padding: 0; border: 1px solid rgba(210,170,185,0.3); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+.servicio-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(138,40,69,0.1); }
+.servicio-img { width: 100%; height: 220px; object-fit: cover; object-position: center top; display: block; }
+.servicio-body { padding: 28px 28px 32px; }
+.servicio-top-line { height: 3px; width: 100%; display: block; }
+.c1 .servicio-top-line { background: linear-gradient(90deg, var(--rosa), var(--rosa-mid)); }
+.c2 .servicio-top-line { background: linear-gradient(90deg, var(--lila), var(--lila-mid)); }
+.c3 .servicio-top-line { background: linear-gradient(90deg, var(--menta), var(--menta-mid)); }
+.servicio-num { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 42px; color: var(--rosa); line-height: 1; margin-bottom: 14px; }
+.c2 .servicio-num { color: var(--lila); }
+.c3 .servicio-num { color: var(--menta); }
+.servicio-title { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--rosa-deep); margin-bottom: 12px; font-weight: 700; line-height: 1.3; }
+.servicio-text { font-size: 14px; color: var(--text-soft); line-height: 1.75; font-weight: 300; }
+.servicio-detail { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+.servicio-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--text-soft); font-weight: 300; }
+.servicio-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--rosa-mid); flex-shrink: 0; margin-top: 7px; }
+.c2 .servicio-dot { background: var(--lila-mid); }
+.c3 .servicio-dot { background: var(--menta-mid); }
+
+/* GALERIA TESTIMONIAL */
+.galeria { padding: 80px 24px; background: linear-gradient(160deg, #fdeef4, #f8e4f0); overflow: hidden; }
+.galeria-title { text-align: center; margin-bottom: 48px; }
+.galeria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1080px; margin: 0 auto; }
+.galeria-item { position: relative; overflow: hidden; border-radius: 20px; }
+.galeria-item:nth-child(2) { border-radius: 20px 60px 20px 60px; }
+.galeria-img { width: 100%; height: 300px; object-fit: cover; object-position: center top; display: block; transition: transform 0.4s ease; }
+.galeria-item:hover .galeria-img { transform: scale(1.05); }
+.galeria-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(138,40,69,0.65) 0%, transparent 55%); display: flex; align-items: flex-end; padding: 24px; }
+.galeria-frase { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: rgba(255,255,255,0.92); line-height: 1.45; font-weight: 400; }
+
+/* PRECIO */
+.precio-section { padding: 110px 24px; background: linear-gradient(160deg, #fdeef4, #ede4fc, #e8f4e0); text-align: center; }
+.precio-box { max-width: 560px; margin: 48px auto 0; background: var(--white); border-radius: 24px; padding: 52px 48px; border: 1px solid rgba(210,170,185,0.35); box-shadow: 0 24px 64px rgba(138,40,69,0.08); position: relative; overflow: hidden; }
+.precio-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--rosa), var(--lila-mid), var(--menta-mid)); }
+.precio-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--rosa-mid); font-weight: 300; margin-bottom: 24px; display: block; }
+.precio-amount { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 80px; color: var(--rosa-deep); line-height: 1; }
+.precio-currency { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--rosa-mid); vertical-align: super; font-weight: 400; }
+.precio-usd { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-soft); opacity: 0.5; margin-top: 4px; font-weight: 300; }
+.precio-divider { width: 48px; height: 1px; background: rgba(210,170,185,0.4); margin: 28px auto; }
+.precio-includes { display: flex; flex-direction: column; gap: 12px; text-align: left; margin-bottom: 36px; }
+.precio-include-item { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text-soft); font-weight: 300; line-height: 1.5; }
+.check-circle { width: 20px; height: 20px; border-radius: 50%; background: var(--rosa); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+.check-circle svg { width: 10px; height: 10px; }
+.precio-cta-note { font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; color: var(--text-soft); opacity: 0.7; margin-top: 20px; line-height: 1.6; }
+
+/* SOBRE */
+.sobre { padding: 110px 24px; background: var(--white); }
+.sobre-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.sobre-img-wrap { position: relative; }
+.sobre-img { width: 100%; height: 600px; object-fit: cover; object-position: center top; border-radius: 80px 24px 80px 24px; display: block; box-shadow: 16px 24px 56px rgba(138,40,69,0.15); }
+.sobre-img-quote { position: absolute; bottom: 32px; right: -24px; background: var(--rosa-deep); border-radius: 16px; padding: 20px 24px; max-width: 220px; box-shadow: 0 8px 32px rgba(138,40,69,0.25); }
+.sobre-img-quote-text { font-family: 'Playfair Display', serif; font-style: italic; font-size: 13px; color: rgba(255,255,255,0.9); line-height: 1.55; font-weight: 400; }
+.sobre-text-block .section-title { margin-bottom: 24px; }
+.sobre-parrafo { font-size: 15px; color: var(--text-soft); line-height: 1.85; font-weight: 300; margin-bottom: 20px; }
+.sobre-parrafo strong { color: var(--rosa-deep); font-weight: 700; }
+.sobre-firma { font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: var(--rosa-mid); margin-top: 32px; }
+
+/* FRASE */
+.frase-section { background: var(--rosa-deep); padding: 90px 24px; text-align: center; }
+.frase-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(22px,4vw,38px); color: rgba(255,255,255,0.92); line-height: 1.45; max-width: 680px; margin: 0 auto 20px; font-weight: 400; }
+.frase-attr { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,0.45); font-weight: 300; }
+
+/* FOOTER */
+footer { background: #1e0c16; padding: 52px 24px; }
+.footer-inner { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+.footer-brand { font-family: 'Playfair Display', serif; font-style: italic; font-size: 20px; color: rgba(255,255,255,0.75); }
+.footer-brand strong { font-style: normal; font-weight: 700; }
+.footer-link { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; font-weight: 300; transition: color 0.25s; display: flex; align-items: center; gap: 8px; }
+.footer-link:hover { color: rgba(255,255,255,0.8); }
+.footer-fb-icon { width: 28px; height: 28px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: background 0.25s; }
+.footer-link:hover .footer-fb-icon { background: rgba(255,255,255,0.2); }
+.footer-copy { width: 100%; text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 1px; font-weight: 300; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { padding: 16px 20px; }
+  .nav-link { display: none; }
+  .hero { padding: 100px 20px 60px; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-img-wrap { display: none; }
+  .btn-ghost { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
+  .servicios-grid { grid-template-columns: 1fr; }
+  .servicios { padding: 70px 20px; }
+  .galeria-grid { grid-template-columns: 1fr; }
+  .galeria { padding: 60px 20px; }
+  .precio-section { padding: 70px 20px; }
+  .precio-box { padding: 40px 28px; }
+  .precio-amount { font-size: 64px; }
+  .sobre-inner { grid-template-columns: 1fr; gap: 40px; }
+  .sobre { padding: 70px 20px; }
+  .sobre-img-quote { display: none; }
+  .frase-section { padding: 60px 20px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .hero-pills { gap: 8px; }
+  .pill { font-size: 12px; padding: 7px 14px; }
+}
+
+/* ANIMACIONES */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">Mujeres que Sanan</a>
+  <a href="#precio" class="nav-link">Obtener el material</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-tag">Material de sanación · Entrega inmediata en PDF</span>
+        <h1 class="hero-title">
+          No es un libro<br>
+          para fingir que<br>
+          <em>todo está bien.</em>
+        </h1>
+        <p class="hero-sub">
+          Es una experiencia de <strong style="font-style:normal;color:var(--rosa-deep);">110 sesiones de autoterapia</strong> para dejar de cargar en silencio, soltar lo que nunca fue tuyo y volver a ti.
+        </p>
+        <div class="hero-pills">
+          <span class="pill">Para quien ya no quiere seguir callando</span>
+          <span class="pill">Para quien se cansó de cargar culpas ajenas</span>
+          <span class="pill">Para quien sabe que algo tiene que cambiar</span>
+        </div>
+        <div>
+          <a href="#precio" class="btn btn-primary">Sí, me lo merezco</a>
+          <a href="#servicios" class="btn btn-ghost">Ver qué incluye</a>
+        </div>
+        <p class="hero-price-note">Acceso completo por solo $5 USD · PDF al instante</p>
+      </div>
+      <div class="hero-img-wrap">
+        <span class="hero-img-tag">Sanación · Colombia</span>
+        <img
+          class="hero-img"
+          src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&q=80&fit=crop"
+          alt="Mujer serena en proceso de sanación"
+          loading="eager"
+        />
+        <div class="hero-img-badge">
+          <div class="hero-img-badge-num">11</div>
+          <div class="hero-img-badge-label">Materiales PDF</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRANJA -->
+<div class="franja">
+  <div class="franja-track">
+    <span class="franja-item">Tú Eres Tu Prioridad <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Hoy Te Dejo Ir <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Soltar Para Sanar <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Vuelvo a Mí <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Merezco Mucho Más <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Me Cansé de Ti <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Abraza a la Niña que Fuiste <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Basta de Amores de Mierda <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Caminando a Través del Duelo <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Tú Eres Tu Prioridad <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Hoy Te Dejo Ir <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Soltar Para Sanar <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Vuelvo a Mí <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Merezco Mucho Más <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Me Cansé de Ti <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Abraza a la Niña que Fuiste <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Basta de Amores de Mierda <span class="franja-sep">✦</span></span>
+    <span class="franja-item">Caminando a Través del Duelo <span class="franja-sep">✦</span></span>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="container">
+    <div class="servicios-header reveal">
+      <span class="eyebrow">Lo que recibes</span>
+      <h2 class="section-title">Un proceso completo<br><em>en tres pilares</em></h2>
+      <p class="servicios-sub">No es contenido suelto. Es una ruta pensada para llevarte del agotamiento emocional a la versión más libre de ti.</p>
+    </div>
+    <div class="servicios-grid">
+
+      <div class="servicio-card c1 reveal reveal-delay-1">
+        <img class="servicio-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&fit=crop" alt="Mujer leyendo con calma" loading="lazy"/>
+        <span class="servicio-top-line"></span>
+        <div class="servicio-body">
+          <div class="servicio-num">01</div>
+          <div class="servicio-title">El libro principal que nadie se atrevió a escribir</div>
+          <p class="servicio-text">"Mi Psicóloga Me Dijo" no tiene frases bonitas para hacerte sentir bien cinco minutos. Tiene verdades que duelen, preguntas que incomodan y herramientas que funcionan.</p>
+          <div class="servicio-detail">
+            <div class="servicio-item"><div class="servicio-dot"></div>110 sesiones de autoterapia guiada</div>
+            <div class="servicio-item"><div class="servicio-dot"></div>Ejercicios aplicables desde el primer día</div>
+            <div class="servicio-item"><div class="servicio-dot"></div>Escrito para mujeres reales, no para casos de estudio</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="servicio-card c2 reveal reveal-delay-2">
+        <img class="servicio-img" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&fit=crop" alt="Grupo de mujeres que se apoyan" loading="lazy"/>
+        <span class="servicio-top-line"></span>
+        <div class="servicio-body">
+          <div class="servicio-num">02</div>
+          <div class="servicio-title">10 guías de sanación para cada etapa del camino</div>
+          <p class="servicio-text">Porque sanar no es lineal. Hay días para soltar, días para volver a ti y días para aprender a decir no. Cada guía acompaña una de esas etapas con profundidad.</p>
+          <div class="servicio-detail">
+            <div class="servicio-item"><div class="servicio-dot"></div>Límites, duelo, amor propio, niña interior y más</div>
+            <div class="servicio-item"><div class="servicio-dot"></div>Rituales, retos de 21 días y afirmaciones</div>
+            <div class="servicio-item"><div class="servicio-dot"></div>Tests de autoconocimiento en cada guía</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="servicio-card c3 reveal reveal-delay-3">
+        <img class="servicio-img" src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=600&q=80&fit=crop" alt="Mujer en paz con ella misma" loading="lazy"/>
+        <span class="servicio-top-line"></span>
+        <div class="servicio-body">
+          <div class="servicio-num">03</div>
+          <div class="servicio-title">Entrega inmediata y un modelo que respeta tu momento</div>
+          <p class="servicio-text">Todo llega en PDF de forma inmediata. Sin esperas, sin registros, sin complicaciones. Y con un precio que no pone barreras al proceso de sanar.</p>
+          <div class="servicio-detail">
+            <div class="servicio-item"><div class="servicio-dot"></div>11 materiales completos en un solo pago</div>
+            <div class="servicio-item"><div class="servicio-dot"></div>Acceso permanente, sin vencimiento</div>
+            <div class="servicio-item"><div class="servicio-dot"></div>Tuyo para siempre por solo $5 USD</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="galeria">
+  <div class="galeria-title reveal">
+    <span class="eyebrow">Mujeres que deciden sanar</span>
+    <h2 class="section-title"><em>El camino</em> empieza<br><strong>con una decisión</strong></h2>
+  </div>
+  <div class="galeria-grid">
+    <div class="galeria-item reveal reveal-delay-1">
+      <img class="galeria-img" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80&fit=crop&crop=top" alt="Mujer libre y empoderada" loading="lazy"/>
+      <div class="galeria-overlay">
+        <p class="galeria-frase">"Ya no cargo lo que nunca fue mío."</p>
+      </div>
+    </div>
+    <div class="galeria-item reveal reveal-delay-2">
+      <img class="galeria-img" src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&q=80&fit=crop&crop=top" alt="Mujer reflexiva en proceso de sanación" loading="lazy"/>
+      <div class="galeria-overlay">
+        <p class="galeria-frase">"Aprendí a elegirme a mí primero."</p>
+      </div>
+    </div>
+    <div class="galeria-item reveal reveal-delay-3">
+      <img class="galeria-img" src="https://images.unsplash.com/photo-1520810627419-35e592f312b1?w=600&q=80&fit=crop&crop=top" alt="Mujer sonriendo en paz" loading="lazy"/>
+      <div class="galeria-overlay">
+        <p class="galeria-frase">"Soltar fue el acto de amor más grande."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIO -->
+<section class="precio-section" id="precio">
+  <div class="container">
+    <span class="eyebrow reveal">Inversión</span>
+    <h2 class="section-title reveal">Todo esto<br><em>por solo</em></h2>
+    <div class="precio-box reveal">
+      <span class="precio-label">Acceso completo · Entrega inmediata</span>
+      <div>
+        <span class="precio-currency">$</span>
+        <span class="precio-amount">5</span>
+      </div>
+      <div class="precio-usd">USD ·</div>
+      <div class="precio-divider"></div>
+      <div class="precio-includes">
+        <div class="precio-include-item">
+          <div class="check-circle"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#8a2845" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Libro principal "Mi Psicóloga Me Dijo" completo
+        </div>
+        <div class="precio-include-item">
+          <div class="check-circle"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#8a2845" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          10 guías de sanación completas con ejercicios y rituales
+        </div>
+        <div class="precio-include-item">
+          <div class="check-circle"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#8a2845" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Tests de autoconocimiento, afirmaciones y retos de 21 días
+        </div>
+        <div class="precio-include-item">
+          <div class="check-circle"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#8a2845" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Entrega inmediata en PDF al realizar tu compra
+        </div>
+        <div class="precio-include-item">
+          <div class="check-circle"><svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2.5 2.5 3.5-4" stroke="#8a2845" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          Acceso permanente, sin fecha de vencimiento
+        </div>
+      </div>
+      <a href="https://www.facebook.com/Mujerequesanan/" target="_blank" rel="noopener" class="btn btn-primary" style="display:block;text-align:center;">Sí, me lo merezco</a>
+      <p class="precio-cta-note">Accede al material de forma inmediata al completar tu compra.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre" id="sobre">
+  <div class="sobre-inner container">
+    <div class="sobre-img-wrap reveal">
+      <img
+        class="sobre-img"
+        src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&q=80&fit=crop&crop=top"
+        alt="Mujer segura y empoderada"
+        loading="lazy"
+      />
+      <div class="sobre-img-quote">
+        <p class="sobre-img-quote-text">"El primer paso para sanar es dejar de hacerte la fuerte."</p>
+      </div>
+    </div>
+    <div class="sobre-text-block reveal">
+      <span class="eyebrow">El origen</span>
+      <h2 class="section-title">Nació de un<br><em>dolor real,</em><br><strong>no de una idea.</strong></h2>
+      <p class="sobre-parrafo">Hubo un momento en que yo también cargaba con culpas que no eran mías. Callaba lo que merecía ser dicho. Me había perdido tanto en los demás que ya no sabía quién era yo cuando nadie me necesitaba.</p>
+      <p class="sobre-parrafo">Fue mi psicóloga quien me dijo algo que lo cambió todo: <strong>"No tienes que seguir cargando sola con algo que nunca fue tuyo."</strong> Esa frase me rompió por dentro. Y también me liberó.</p>
+      <p class="sobre-parrafo">Por eso existe <strong>Mujeres que Sanan</strong>. Porque me pregunté cuántas mujeres más estaban exactamente donde yo estaba, sin acceso a las herramientas que merecían. Este material es lo que yo hubiera querido tener antes.</p>
+      <div class="sobre-firma">— Mujeres que Sanan</div>
+    </div>
+  </div>
+</section>
+
+<!-- FRASE -->
+<section class="frase-section">
+  <p class="frase-quote">"Sanar no es olvidar lo que pasó. Es aprender a cargarlo diferente, sin que te defina ni te destruya."</p>
+  <span class="frase-attr">Mi Psicóloga Me Dijo</span>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Mujeres <strong>que Sanan</strong></div>
+    <div>
+      <a href="https://www.facebook.com/Mujerequesanan/" target="_blank" rel="noopener" class="footer-link">
+        <div class="footer-fb-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        Mujeres que Sanan
+      </a>
+    </div>
+    <div class="footer-copy">© 2025 Mujeres que Sanan · Material de sanación para mujeres · Colombia</div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
