@@ -153,6 +153,31 @@
   /* Antes/Despues */
   .ad-section{background:var(--paper);}
   .ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto;}
+
+  /* Así se ven por dentro - marcos de tablet */
+  .interior-section{background:var(--plum);}
+  .interior-section .section-head h2{color:#fff;}
+  .interior-section .section-head h2 em{color:var(--gold);}
+  .interior-section .section-head p{color:#CBA9B6;}
+  .interior-section .eyebrow{color:var(--gold);}
+  .tablet-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+    max-width:1100px;margin:0 auto;
+  }
+  .tablet-frame{
+    background:#1E1220;
+    border-radius:20px;
+    padding:12px 12px 26px;
+    box-shadow:0 20px 40px -16px rgba(0,0,0,0.5);
+  }
+  .tablet-screen{
+    border-radius:8px;overflow:hidden;
+    background:#fff;
+    aspect-ratio:3/4.6;
+  }
+  .tablet-screen img{width:100%;height:100%;object-fit:cover;object-position:top;}
+  .tablet-cam{width:6px;height:6px;border-radius:50%;background:#4A3A48;margin:0 auto 10px;}
+  .tablet-label{text-align:center;color:#fff;font-size:13px;font-weight:600;margin-top:12px;font-family:'Fraunces',serif;}
   .ad-card{border-radius:16px;padding:32px 28px;}
   .ad-card.antes{background:#F3E7E3;border:1px solid var(--line);}
   .ad-card.despues{background:var(--plum);color:#F3E4EA;}
@@ -301,6 +326,7 @@
     .pillar, .pillar:nth-child(even){grid-template-columns:1fr;gap:24px;}
     .pillar:nth-child(even) .pillar-img{order:0;}
     .ad-grid{grid-template-columns:1fr;}
+    .tablet-grid{grid-template-columns:1fr 1fr;}
     .testi-grid{grid-template-columns:1fr;}
     .price-grid{grid-template-columns:1fr 1fr;}
     .origin-grid{grid-template-columns:1fr;}
@@ -424,6 +450,46 @@
           <li>Acceso permanente, sin vencimiento</li>
           <li>Tú eliges cuánto puedes aportar hoy</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="interior-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Así se ven por dentro</span>
+      <h2>Cada guía, página a página <em>en tu pantalla</em></h2>
+      <p>Diseño cuidado, tipografía cálida y ejercicios reales. Ábrelas desde el celular, la tablet o el computador.</p>
+    </div>
+    <div class="tablet-grid">
+      <div class="reveal">
+        <div class="tablet-frame">
+          <div class="tablet-cam"></div>
+          <div class="tablet-screen"><img src="img/page-psicologa.jpg" alt="Página interior de Mi Psicóloga Me Dijo"></div>
+        </div>
+        <div class="tablet-label">Mi Psicóloga Me Dijo</div>
+      </div>
+      <div class="reveal">
+        <div class="tablet-frame">
+          <div class="tablet-cam"></div>
+          <div class="tablet-screen"><img src="img/page-prioridad.jpg" alt="Página interior de Tú Eres Tu Prioridad"></div>
+        </div>
+        <div class="tablet-label">Tú Eres Tu Prioridad</div>
+      </div>
+      <div class="reveal">
+        <div class="tablet-frame">
+          <div class="tablet-cam"></div>
+          <div class="tablet-screen"><img src="img/page-merezco.jpg" alt="Página interior de Merezco Mucho Más"></div>
+        </div>
+        <div class="tablet-label">Merezco Mucho Más</div>
+      </div>
+      <div class="reveal">
+        <div class="tablet-frame">
+          <div class="tablet-cam"></div>
+          <div class="tablet-screen"><img src="img/page-canse.jpg" alt="Página interior de Me Cansé de Ti"></div>
+        </div>
+        <div class="tablet-label">Me Cansé de Ti</div>
       </div>
     </div>
   </div>
