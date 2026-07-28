@@ -127,6 +127,29 @@
   .marquee span{margin:0 20px;}
   @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
+  /* Materiales - botones estilo tarjeta */
+  .materials-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
+    max-width:1000px;margin:0 auto 64px;
+  }
+  .material-btn{
+    background:var(--plum);
+    border:1.5px solid rgba(255,255,255,0.08);
+    border-radius:16px;
+    padding:22px 14px;
+    text-align:center;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .material-btn:hover{border-color:var(--gold);transform:translateY(-3px);}
+  .material-icon{
+    width:44px;height:44px;margin:0 auto 12px;
+    background:rgba(201,166,107,0.16);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:20px;
+  }
+  .material-name{color:#fff;font-size:13px;font-weight:600;line-height:1.3;}
+
   /* Section generic */
   section{padding:80px 0;}
   .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
@@ -333,6 +356,7 @@
     .origin-grid{grid-template-columns:1fr;}
     .guarantee{flex-direction:column;text-align:center;padding:30px 24px;}
     section{padding:56px 0;}
+    .materials-grid{grid-template-columns:repeat(2,1fr);}
   }
   @media(max-width:520px){
     .price-grid{grid-template-columns:1fr 1fr;}
@@ -397,19 +421,26 @@
   </div>
 </div>
 
-<div class="marquee-wrap">
-  <div class="marquee">
-    <span>Tú Eres Tu Prioridad</span><span>✦</span><span>Hoy Te Dejo Ir</span><span>✦</span><span>Soltar Para Sanar</span><span>✦</span><span>Vuelvo a Mí</span><span>✦</span><span>Merezco Mucho Más</span><span>✦</span><span>Me Cansé de Ti</span><span>✦</span><span>Abraza a la Niña que Fuiste</span><span>✦</span><span>Caminando a Través del Duelo</span><span>✦</span>
-    <span>Tú Eres Tu Prioridad</span><span>✦</span><span>Hoy Te Dejo Ir</span><span>✦</span><span>Soltar Para Sanar</span><span>✦</span><span>Vuelvo a Mí</span><span>✦</span><span>Merezco Mucho Más</span><span>✦</span><span>Me Cansé de Ti</span><span>✦</span><span>Abraza a la Niña que Fuiste</span><span>✦</span><span>Caminando a Través del Duelo</span><span>✦</span>
-  </div>
-</div>
-
 <section id="servicios">
   <div class="container">
     <div class="section-head">
       <span class="eyebrow">Lo que recibes</span>
       <h2>Un proceso completo <em>en tres pilares</em></h2>
       <p>No es contenido suelto. Es una ruta pensada para llevarte del agotamiento emocional a la versión más libre de ti.</p>
+    </div>
+
+    <div class="materials-grid">
+      <div class="material-btn"><div class="material-icon">📖</div><div class="material-name">Mi Psicóloga Me Dijo</div></div>
+      <div class="material-btn"><div class="material-icon">💔</div><div class="material-name">Basta de Amores de Mierda</div></div>
+      <div class="material-btn"><div class="material-icon">🕯️</div><div class="material-name">Caminando a Través del Duelo</div></div>
+      <div class="material-btn"><div class="material-icon">🕊️</div><div class="material-name">Hoy Te Dejo Ir</div></div>
+      <div class="material-btn"><div class="material-icon">🍃</div><div class="material-name">Me Cansé de Ti</div></div>
+      <div class="material-btn"><div class="material-icon">👑</div><div class="material-name">Merezco Mucho Más</div></div>
+      <div class="material-btn"><div class="material-icon">☀️</div><div class="material-name">Soltar Para Sanar</div></div>
+      <div class="material-btn"><div class="material-icon">🌙</div><div class="material-name">Vuelvo a Mí</div></div>
+      <div class="material-btn"><div class="material-icon">💫</div><div class="material-name">Tú Eres Tu Prioridad</div></div>
+      <div class="material-btn"><div class="material-icon">🔍</div><div class="material-name">Tests de Autoconocimiento</div></div>
+      <div class="material-btn"><div class="material-icon">📅</div><div class="material-name">Retos de 21 Días</div></div>
     </div>
 
     <div class="pillar reveal">
