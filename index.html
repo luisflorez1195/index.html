@@ -6,495 +6,357 @@
 <title>Mujeres que Sanan · Mi Psicóloga Me Dijo</title>
 <meta name="description" content="110 sesiones de autoterapia + 10 guías de sanación. Entrega inmediata en PDF. Elige tu contribución consciente.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#FBF3EF;
-    --paper:#FFFDFB;
-    --plum:#3E2233;
-    --plum-2:#5A2F45;
-    --rose:#B4577A;
-    --rose-deep:#9A3E60;
-    --gold:#C9A66B;
-    --sage:#7C9473;
-    --ink:#2E2024;
-    --ink-soft:#6B5A61;
-    --line:#E8D9D2;
+    --bg: #FBF6F2;
+    --bg-soft: #F3E9E4;
+    --ink: #3D2C3A;
+    --ink-soft: #6E5A6B;
+    --rose: #C97B84;
+    --rose-deep: #A85C67;
+    --sage: #7C9885;
+    --gold: #B8923F;
+    --paper: #FFFDFB;
+    --line: rgba(61,44,58,0.12);
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
   body{
     margin:0;
-    font-family:'Inter',sans-serif;
-    color:var(--ink);
-    background:var(--cream);
-    -webkit-font-smoothing:antialiased;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
-  img{max-width:100%;display:block;}
-  a{text-decoration:none;color:inherit;}
-  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
-  .eyebrow{
-    font-size:12.5px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--rose-deep);
-    font-weight:700;
-    margin-bottom:14px;
+  h1,h2,h3,.serif{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .wrap{ max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  a{ color: inherit; }
+  img{ max-width:100%; display:block; }
+
+  /* ---------- MARQUEE BAR (de la landing actual) ---------- */
+  .marquee-bar{
+    background: var(--ink);
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 9px 0;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .marquee-track{
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 26s linear infinite;
+  }
+  .marquee-track span{ margin: 0 28px; color: rgba(255,255,255,0.92); }
+  .marquee-track span strong{ color: #F2D9A8; }
+  @keyframes marquee{
+    0%{ transform: translateX(0); }
+    100%{ transform: translateX(-50%); }
+  }
+
+  /* top nav */
+  .topnav{
+    display:flex; align-items:center; justify-content:space-between;
+    max-width: 960px; margin: 0 auto; padding: 18px 24px;
+  }
+  .topnav .logo{ font-family:'Fraunces',serif; font-weight:600; font-size:17px; }
+  .topnav .nav-cta{
+    font-size: 13.5px; font-weight:700; text-decoration:none;
+    background: var(--rose-deep); color:#fff; padding: 9px 18px; border-radius: 7px;
+  }
+
+  /* ---------- CTA intermitente (urgencia) ---------- */
+  .cta-btn{
     display:inline-block;
+    background: var(--rose-deep);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 36px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(168,92,103,0.35);
+    transition: transform .2s ease;
+  }
+  .cta-btn:hover{ transform: translateY(-2px); }
+  .cta-urgent{
+    animation: pulseUrgent 1.7s ease-in-out infinite;
+  }
+  @keyframes pulseUrgent{
+    0%, 100%{
+      box-shadow: 0 6px 18px rgba(168,92,103,0.35), 0 0 0 0 rgba(168,92,103,0.55);
+      transform: scale(1);
+    }
+    50%{
+      box-shadow: 0 6px 22px rgba(168,92,103,0.45), 0 0 0 10px rgba(168,92,103,0);
+      transform: scale(1.035);
+    }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cta-urgent{ animation: none; }
+    .marquee-track{ animation: none; padding-left: 0; }
+  }
+  .cta-note{
+    display:block;
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--ink-soft);
   }
 
-  /* Announcement bar */
-  .announce-wrap{background:var(--gold);overflow:hidden;padding:10px 0;}
-  .announce-marquee{white-space:nowrap;display:inline-block;animation:announce-scroll 32s linear infinite;font-size:12.5px;color:var(--plum);text-transform:uppercase;letter-spacing:0.03em;font-weight:700;}
-  .announce-marquee span{margin:0 22px;}
-  .announce-marquee strong{color:var(--rose-deep);}
-  @keyframes announce-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-
-  /* Nav */
-  nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 24px;
-    max-width:1100px;
-    margin:0 auto;
-    background:var(--plum);
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 56px 0 64px;
+    text-align: center;
   }
-  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:#fff;}
-  .nav-cta{
-    background:var(--gold);
-    color:var(--plum);
-    padding:10px 22px;
-    border-radius:100px;
-    font-size:14px;
-    font-weight:700;
-  }
-
-  /* Hero v2 - estilo oscuro con badges */
-  .hero{background:var(--plum);padding:44px 24px 0;}
-  .hero-grid{
-    max-width:1100px;margin:0 auto;
-    display:grid;grid-template-columns:1fr;gap:0;align-items:start;
-  }
-  .hero-badge-top{
-    display:inline-block;background:rgba(201,166,107,0.16);color:var(--gold);
-    font-size:12.5px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;
-    padding:8px 18px;border-radius:100px;margin-bottom:22px;
+  .eyebrow{
+    display:inline-block;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+    border: 1px solid var(--rose);
+    border-radius: 100px;
+    padding: 6px 18px;
+    margin-bottom: 28px;
   }
   .hero h1{
-    font-size:clamp(30px,4.6vw,46px);
-    line-height:1.12;
-    font-weight:500;
-    color:#fff;
-    margin:0 0 18px;
-    max-width:720px;
+    font-size: clamp(30px, 6vw, 48px);
+    line-height: 1.18;
+    margin: 0 0 20px;
+    font-style: italic;
+    font-weight: 400;
   }
-  .hero h1 .hl{color:var(--gold);}
-  .hero p.lead{
-    font-size:17px;line-height:1.6;color:#D9C3CD;max-width:560px;margin:0 0 30px;
+  .hero h1 em{ font-style: normal; font-weight: 600; color: var(--rose-deep); }
+  .hero p.sub{
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin: 0 auto 36px;
   }
-  .price-cta-row{display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:14px;}
-  .btn-price{
-    background:var(--gold);
-    color:var(--plum);
-    padding:18px 34px;
-    border-radius:100px;
-    font-weight:800;
-    font-size:16.5px;
-    display:inline-block;
+  .trust-row{
+    margin-top:22px; font-size:13px; color:var(--ink-soft);
+    display:flex; gap:18px; justify-content:center; flex-wrap:wrap;
   }
-  .trust-row{display:flex;gap:26px;flex-wrap:wrap;color:#D9C3CD;font-size:13.5px;margin-bottom:36px;}
-  .trust-row span{display:flex;align-items:center;gap:7px;}
-  .hero-image-full{max-width:900px;margin:0 auto;padding-bottom:0;}
-  .hero-image-full img{border-radius:18px 18px 0 0;}
-  .stats-bar{
-    background:var(--plum);
-    border-top:1px solid rgba(255,255,255,0.1);
-    padding:30px 24px 40px;
+  .hero-img{
+    margin: 40px auto 0; max-width: 460px; border-radius: 14px; overflow:hidden;
+    box-shadow: 0 24px 48px -24px rgba(61,44,58,0.35);
   }
-  .stats-grid{
-    max-width:1000px;margin:0 auto;
-    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;
-  }
-  .stat-item .stat-num{font-family:'Fraunces',serif;font-size:24px;color:#fff;font-weight:600;margin-bottom:4px;}
-  .stat-item .stat-lbl{font-size:12.5px;color:#B79AA6;}
 
-  /* Marquee */
-  .marquee-wrap{overflow:hidden;background:var(--plum);padding:16px 0;}
-  .marquee{white-space:nowrap;animation:scroll 38s linear infinite;font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:#E7C9D4;}
-  .marquee span{margin:0 20px;}
-  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  /* stat strip */
+  .stats{
+    display:flex; justify-content:center; gap:40px; flex-wrap:wrap;
+    padding: 32px 0 8px; text-align:center;
+  }
+  .stats .stat b{ display:block; font-family:'Fraunces',serif; font-size:26px; color:var(--rose-deep); }
+  .stats .stat span{ font-size:12.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.06em; }
 
-  /* Materiales - botones estilo tarjeta */
-  .materials-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-    max-width:1000px;margin:0 auto 64px;
+  /* ---------- LETTER SECTIONS (elemento firma) ---------- */
+  .letter{
+    background: var(--paper);
+    border-radius: 2px;
+    margin: 28px auto;
+    padding: 52px 44px;
+    max-width: 640px;
+    box-shadow: 0 1px 2px rgba(61,44,58,0.06), 0 20px 40px -24px rgba(61,44,58,0.18);
+    position: relative;
   }
-  .material-btn{
-    background:var(--plum);
-    border:1.5px solid rgba(255,255,255,0.08);
-    border-radius:16px;
-    padding:22px 14px;
-    text-align:center;
-    transition:border-color .15s ease, transform .15s ease;
+  .letter::before{
+    content:"";
+    position:absolute; top:0; left:0; right:0; height:4px;
+    background: linear-gradient(90deg, var(--rose) 0%, var(--sage) 50%, var(--gold) 100%);
+    border-radius: 2px 2px 0 0;
   }
-  .material-btn:hover{border-color:var(--gold);transform:translateY(-3px);}
-  .material-icon{
-    width:44px;height:44px;margin:0 auto 12px;
-    background:rgba(201,166,107,0.16);
-    border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    font-size:20px;
+  .fold-mark{ width:100%; height:1px; background: var(--line); margin: 40px 0; position:relative; }
+  .fold-mark::after{
+    content: "✦"; position:absolute; left:50%; top:50%; transform: translate(-50%,-50%);
+    background: var(--paper); padding: 0 12px; color: var(--rose); font-size: 12px;
   }
-  .material-name{color:#fff;font-size:13px;font-weight:600;line-height:1.3;}
+  .letter h2{ font-size: clamp(22px, 4vw, 28px); margin: 0 0 18px; }
+  .letter p{ font-size: 16.5px; color: var(--ink-soft); margin: 0 0 16px; }
+  .letter p:last-child{ margin-bottom: 0; }
+  .letter p.lead{ font-size: 19px; color: var(--ink); font-family:'Fraunces',serif; font-style: italic; font-weight:400; }
 
-  /* Section generic */
-  section{padding:80px 0;}
-  .section-head{max-width:640px;margin:0 auto 48px;text-align:center;}
-  .section-head h2{font-size:clamp(28px,4vw,38px);font-weight:500;color:var(--plum);margin:0 0 14px;}
-  .section-head h2 em{font-style:italic;color:var(--rose-deep);}
-  .section-head p{color:var(--ink-soft);font-size:16px;line-height:1.6;margin:0;}
+  .section{ padding: 56px 0; }
+  .section h2{ font-size: clamp(23px, 4vw, 29px); text-align:center; margin: 0 0 12px; }
+  .section .eyebrow-sm{
+    display:block; text-align:center; font-size:12.5px; text-transform:uppercase;
+    letter-spacing:0.1em; color: var(--sage); margin-bottom:10px; font-weight:700;
+  }
+  .section .section-sub{ text-align:center; color: var(--ink-soft); max-width: 480px; margin: 0 auto 36px; }
 
-  /* Pillars */
-  .pillar{
-    display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:center;
-    margin-bottom:64px;
+  .heal-list{ list-style:none; margin:0; padding:0; display:grid; gap:12px; }
+  .heal-list li{
+    display:flex; align-items:center; gap:14px;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 18px; font-size: 15.5px;
   }
-  .pillar:nth-child(even){grid-template-columns:1.15fr 0.85fr;}
-  .pillar:nth-child(even) .pillar-img{order:2;}
-  .pillar-img img{border-radius:16px;}
-  .pillar-num{font-family:'Fraunces',serif;font-size:15px;color:var(--gold);font-weight:600;letter-spacing:0.05em;}
-  .pillar h3{font-size:24px;color:var(--plum);margin:10px 0 12px;font-weight:500;}
-  .pillar p{color:var(--ink-soft);line-height:1.65;margin:0 0 16px;}
-  .check-list{list-style:none;padding:0;margin:0;}
-  .check-list li{padding:8px 0 8px 26px;position:relative;font-size:14.5px;color:var(--ink);border-top:1px solid var(--line);}
-  .check-list li:first-child{border-top:none;}
-  .check-list li::before{content:"✓";position:absolute;left:0;color:var(--sage);font-weight:700;}
+  .heal-list .ico{ flex-shrink:0; font-size:20px; }
 
-  /* Antes/Despues */
-  .ad-section{background:var(--paper);}
-  .ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto;}
+  /* antes/despues */
+  .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media(max-width:600px){ .grid-2{ grid-template-columns: 1fr; } }
+  .compare-card{ background: var(--paper); border:1px solid var(--line); border-radius:12px; padding:22px 20px; }
+  .compare-card h4{ margin:0 0 12px; font-family:'Fraunces',serif; font-size:16px; }
+  .compare-card.antes h4{ color: var(--ink-soft); }
+  .compare-card.despues h4{ color: var(--sage); }
+  .compare-card ul{ margin:0; padding-left:18px; font-size:14.5px; color:var(--ink-soft); }
+  .compare-card li{ margin-bottom:8px; }
 
-  /* Así se ven por dentro - marcos de tablet */
-  .interior-section{background:var(--plum);}
-  .interior-section .section-head h2{color:#fff;}
-  .interior-section .section-head h2 em{color:var(--gold);}
-  .interior-section .section-head p{color:#CBA9B6;}
-  .interior-section .eyebrow{color:var(--gold);}
-  .tablet-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
-    max-width:1100px;margin:0 auto;
-  }
-  .tablet-frame{
-    background:#1E1220;
-    border-radius:20px;
-    padding:12px 12px 26px;
-    box-shadow:0 20px 40px -16px rgba(0,0,0,0.5);
-  }
-  .tablet-screen{
-    border-radius:8px;overflow:hidden;
-    background:#fff;
-    aspect-ratio:3/4;
-    display:flex;align-items:center;justify-content:center;
-  }
-  .tablet-screen img{width:100%;height:100%;object-fit:contain;object-position:center;}
-  .tablet-cam{width:6px;height:6px;border-radius:50%;background:#4A3A48;margin:0 auto 10px;}
-  .tablet-label{text-align:center;color:#fff;font-size:13px;font-weight:600;margin-top:12px;font-family:'Fraunces',serif;}
-  .ad-card{border-radius:16px;padding:32px 28px;}
-  .ad-card.antes{background:#F3E7E3;border:1px solid var(--line);}
-  .ad-card.despues{background:var(--plum);color:#F3E4EA;}
-  .ad-card h4{font-family:'Fraunces',serif;font-size:19px;margin:0 0 18px;font-weight:500;}
-  .ad-card ul{list-style:none;padding:0;margin:0;}
-  .ad-card li{padding:7px 0;font-size:14.5px;}
-  .ad-card.antes li::before{content:"– ";color:#B4577A;}
-  .ad-card.despues li::before{content:"✦ ";color:var(--gold);}
+  .testimonial-slot img{ border-radius:12px; border:1px solid var(--line); }
 
-  /* Testimonials */
-  .testi-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;max-width:640px;margin:0 auto;}
-  .testi-shot{border-radius:16px;overflow:hidden;box-shadow:0 16px 36px -16px rgba(62,34,51,0.28);border:1px solid var(--line);}
-  .testi-shot img{width:100%;display:block;}
-  .testi-caption{text-align:center;font-size:13px;color:var(--ink-soft);margin-top:12px;}
+  /* pricing */
+  .value-list{ list-style:none; padding:0; margin: 0 0 20px; max-width:420px; margin-inline:auto; }
+  .value-list li{ display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed var(--line); font-size:14.5px; color:var(--ink-soft); }
+  .value-total{ text-align:center; font-size:14px; color:var(--ink-soft); margin-bottom:36px; }
+  .value-total strong{ color:var(--ink); }
 
-  /* Value stack + Pricing */
-  .value-section{background:var(--plum);color:#F3E4EA;}
-  .value-section .section-head p{color:#CBA9B6;}
-  .value-section .section-head h2{color:#fff;}
-  .value-section .section-head h2 em{color:var(--gold);}
-  .value-stack{
-    max-width:560px;margin:0 auto 40px;
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.14);
-    border-radius:18px;
-    padding:8px 28px;
-  }
-  .value-row{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.12);
-    font-size:15px;
-  }
-  .value-row:last-child{border-bottom:none;}
-  .value-row .price{color:var(--gold);font-weight:700;}
-  .value-total{
-    display:flex;justify-content:space-between;
-    max-width:560px;margin:0 auto 50px;padding:0 4px;
-    font-size:16px;color:#CBA9B6;
-  }
-  .value-total strong{color:#fff;text-decoration:line-through;text-decoration-color:var(--rose);}
-
-  .pricing-intro{text-align:center;margin-bottom:36px;}
-  .pricing-intro .eyebrow{color:var(--gold);}
-  .pricing-intro h3{font-size:22px;color:#fff;font-weight:500;margin:0 0 8px;}
-  .pricing-intro p{color:#CBA9B6;font-size:14.5px;max-width:460px;margin:0 auto;}
-
-  .price-grid{
-    display:grid;grid-template-columns:repeat(5,1fr);gap:16px;
-    max-width:1180px;margin:0 auto;
-  }
+  .price-grid{ display:grid; gap:16px; max-width: 520px; margin: 0 auto; }
   .price-card{
-    background:var(--paper);
-    border-radius:16px;
-    padding:26px 20px 22px;
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 14px;
+    padding: 22px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;
     position:relative;
-    display:flex;flex-direction:column;
-    border:2px solid transparent;
-    transition:transform .15s ease;
   }
-  .price-card:hover{transform:translateY(-4px);}
-  .price-card.featured{border-color:var(--gold);}
-  .price-badge{
-    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
-    background:var(--gold);color:var(--plum);
-    font-size:11px;font-weight:800;letter-spacing:0.04em;
-    padding:5px 14px;border-radius:100px;text-transform:uppercase;
-    white-space:nowrap;
+  .price-card.featured{ border-color: var(--rose); background: linear-gradient(160deg, var(--paper) 0%, #FBEFEF 100%); }
+  .price-card .badge{
+    position:absolute; top:-11px; left:20px; background: var(--rose-deep); color:#fff;
+    font-size:11px; font-weight:700; letter-spacing:0.04em; padding:3px 10px; border-radius:100px;
   }
-  .price-card .tier-name{font-size:13.5px;color:var(--ink-soft);font-weight:600;margin-bottom:6px;}
-  .price-card .tier-amount{font-family:'Fraunces',serif;font-size:34px;color:var(--plum);font-weight:600;margin-bottom:4px;}
-  .price-card .tier-amount span{font-size:14px;color:var(--ink-soft);font-weight:400;font-family:'Inter',sans-serif;}
-  .price-card .tier-note{font-size:12.5px;color:var(--ink-soft);margin-bottom:18px;min-height:32px;}
-  .price-card .tier-btn{
-    margin-top:auto;
-    background:var(--rose-deep);color:#fff;text-align:center;
-    padding:12px 10px;border-radius:100px;font-weight:700;font-size:13.5px;
+  .price-card .label{ font-size:13.5px; color:var(--ink-soft); margin-bottom:4px; }
+  .price-card .amount{ font-family:'Fraunces',serif; font-size:26px; color:var(--rose-deep); }
+  .price-card .desc{ font-size:12.5px; color:var(--ink-soft); margin-top:2px; max-width:220px; }
+  .price-card .buy{
+    flex-shrink:0; background: var(--ink); color:#fff; text-decoration:none;
+    font-size:13.5px; font-weight:700; padding:11px 18px; border-radius:8px; white-space:nowrap;
   }
-  .price-card.featured .tier-btn{background:var(--gold);color:var(--plum);}
-  .price-note-below{text-align:center;color:#CBA9B6;font-size:13px;margin-top:28px;}
+  .price-card.featured .buy{ background: var(--rose-deep); }
+  .pay-note{ text-align:center; font-size:12.5px; color:var(--ink-soft); margin-top:24px; }
 
-  /* Guarantee */
+  /* garantia */
   .guarantee{
-    max-width:820px;margin:0 auto;
-    background:var(--paper);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:40px;
-    display:flex;gap:32px;align-items:center;
+    display:flex; gap:24px; align-items:center; background: var(--bg-soft);
+    border-radius:16px; padding: 28px; max-width:600px; margin:0 auto;
   }
-  .guarantee .seal{
-    width:88px;height:88px;flex-shrink:0;
-    border-radius:50%;
-    background:var(--cream);
-    border:2px dashed var(--gold);
-    display:flex;align-items:center;justify-content:center;
-    font-family:'Fraunces',serif;font-size:13px;color:var(--rose-deep);font-weight:600;
-    text-align:center;line-height:1.2;
+  .guarantee .badge-circle{
+    flex-shrink:0; width:64px; height:64px; border-radius:50%; background:var(--sage); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:13px; text-align:center; line-height:1.1;
   }
-  .guarantee h3{margin:0 0 8px;font-size:20px;color:var(--plum);font-weight:500;}
-  .guarantee p{margin:0;color:var(--ink-soft);font-size:14.5px;line-height:1.6;}
+  @media(max-width:520px){ .guarantee{ flex-direction:column; text-align:center; } }
 
-  /* FAQ */
-  .faq-list{max-width:720px;margin:0 auto;}
-  .faq-item{border-bottom:1px solid var(--line);padding:22px 0;}
-  .faq-item summary{
-    cursor:pointer;font-weight:600;color:var(--plum);font-size:16px;
-    list-style:none;display:flex;justify-content:space-between;align-items:center;
+  /* origen quote */
+  .quote-block{
+    border-left: 3px solid var(--rose); padding-left:20px; margin: 20px 0;
+    font-family:'Fraunces',serif; font-style:italic; font-size:18px; color:var(--ink);
   }
-  .faq-item summary::-webkit-details-marker{display:none;}
-  .faq-item summary::after{content:"+";font-size:20px;color:var(--rose-deep);}
-  .faq-item[open] summary::after{content:"–";}
-  .faq-item p{color:var(--ink-soft);font-size:14.5px;line-height:1.65;margin:12px 0 0;}
 
-  /* Origin */
-  .origin{background:var(--paper);}
-  .origin-grid{display:grid;grid-template-columns:0.8fr 1.2fr;gap:48px;align-items:center;}
-  .origin blockquote{
-    font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--plum);
-    border-left:3px solid var(--gold);padding-left:20px;margin:20px 0;
-  }
-  .origin p{color:var(--ink-soft);line-height:1.7;font-size:15px;}
-  .origin-img img{border-radius:16px;}
+  /* faq */
+  details{ background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:16px 18px; margin-bottom:10px; }
+  summary{ cursor:pointer; font-weight:700; font-size:15px; }
+  details p{ margin: 10px 0 0; color:var(--ink-soft); font-size:14.5px; }
 
-  /* Payment icons */
-  .pay-icons{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:20px;opacity:0.7;}
-  .pay-icons span{font-size:12.5px;font-weight:700;color:var(--ink-soft);border:1px solid var(--line);padding:6px 12px;border-radius:6px;}
+  footer{ text-align:center; padding: 56px 24px 48px; color: var(--ink-soft); font-size: 13.5px; }
+  .ps{ max-width: 560px; margin: 0 auto 8px; font-style: italic; font-family:'Fraunces', serif; color: var(--ink); }
+  .foot-links a{ margin: 0 10px; text-decoration:none; color:var(--ink-soft); }
 
-  /* Final CTA */
-  .final-cta{text-align:center;}
-  .final-cta h2{max-width:600px;margin:0 auto 16px;}
+  .reveal{ opacity:0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform: translateY(0); }
 
-  /* Footer */
-  footer{background:var(--plum);color:#CBA9B6;padding:50px 0 30px;text-align:center;}
-  footer .logo{color:#fff;font-size:18px;margin-bottom:6px;}
-  footer .flinks{margin:18px 0;font-size:13px;}
-  footer .flinks a{margin:0 10px;text-decoration:underline;color:#E7C9D4;}
-  footer .fine{font-size:12.5px;opacity:0.7;margin-top:14px;}
-
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
-  .reveal.visible{opacity:1;transform:translateY(0);}
-
-  /* Mobile */
-  @media(max-width:860px){
-    .hero-grid{grid-template-columns:1fr;gap:36px;}
-    .hero p.lead{max-width:100%;}
-    .pillar, .pillar:nth-child(even){grid-template-columns:1fr;gap:24px;}
-    .pillar:nth-child(even) .pillar-img{order:0;}
-    .ad-grid{grid-template-columns:1fr;}
-    .tablet-grid{grid-template-columns:1fr 1fr;}
-    .testi-grid{grid-template-columns:1fr;}
-    .price-grid{grid-template-columns:1fr 1fr;}
-    .origin-grid{grid-template-columns:1fr;}
-    .guarantee{flex-direction:column;text-align:center;padding:30px 24px;}
-    section{padding:56px 0;}
-    .materials-grid{grid-template-columns:repeat(2,1fr);}
-  }
-  @media(max-width:520px){
-    .price-grid{grid-template-columns:1fr 1fr;}
-    .floating-badge{left:12px;bottom:-14px;}
-  }
-  @media(max-width:400px){
-    .price-grid{grid-template-columns:1fr;}
+  @media (max-width: 640px){
+    .letter{ padding: 34px 24px; }
+    .price-card{ flex-direction:column; align-items:flex-start; }
+    .price-card .buy{ width:100%; text-align:center; }
   }
 </style>
 </head>
 <body>
 
-<div class="announce-wrap">
-  <div class="announce-marquee">
-    <span>Entrega inmediata en PDF · <strong>Elige tu contribución</strong> · Acceso permanente sin vencimiento</span>
+<!-- MARQUEE BAR -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span>Entrega inmediata en PDF</span>
+    <span><strong>Elige tu contribución</strong></span>
+    <span>Acceso permanente sin vencimiento</span>
     <span>Compatible con móvil, tablet y computador</span>
     <span>Acceso de por vida + todas las actualizaciones gratis</span>
-    <span><strong>Oferta limitada</strong> · 11 guías de sanación completas por solo $4.99</span>
-    <span>Acceso inmediato tras la compra</span>
-    <span>Entrega inmediata en PDF · <strong>Elige tu contribución</strong> · Acceso permanente sin vencimiento</span>
+    <span><strong>Oferta limitada</strong> · 11 guías completas desde $4.99</span>
+    <span>Entrega inmediata en PDF</span>
+    <span><strong>Elige tu contribución</strong></span>
+    <span>Acceso permanente sin vencimiento</span>
     <span>Compatible con móvil, tablet y computador</span>
     <span>Acceso de por vida + todas las actualizaciones gratis</span>
-    <span><strong>Oferta limitada</strong> · 11 guías de sanación completas por solo $4.99</span>
-    <span>Acceso inmediato tras la compra</span>
+    <span><strong>Oferta limitada</strong> · 11 guías completas desde $4.99</span>
   </div>
 </div>
 
-<div style="background:var(--plum);">
-<nav>
-  <a href="#" class="logo">Mujeres que Sanan</a>
+<div class="topnav">
+  <span class="logo">Mujeres que Sanan</span>
   <a href="#precio" class="nav-cta">Obtener el material</a>
-</nav>
 </div>
 
-<section class="hero">
-  <div class="hero-grid">
-    <div>
-      <span class="hero-badge-top">Método de sanación en 3 pasos</span>
-      <h1>Deja de cargar en <span class="hl">silencio</span> desde la primera lectura</h1>
-      <p class="lead">Accede a 11 materiales completos —el libro "Mi Psicóloga Me Dijo" + 10 guías de sanación— para soltar lo que nunca fue tuyo y volver a ti.</p>
-      <div class="price-cta-row">
-        <a href="#precio" class="btn-price">Quiero acceder ahora · Desde $4.99 USD</a>
-      </div>
-      <div class="trust-row">
-        <span>🔒 Compra segura</span>
-        <span>⚡ Acceso inmediato</span>
-        <span>✅ Garantía de 7 días</span>
-      </div>
-    </div>
+<section class="hero wrap reveal">
+  <span class="eyebrow">Método de sanación en 3 pasos</span>
+  <h1>¿Sientes que has intentado de todo para sanar<br><em>pero sigues cargando el mismo dolor?</em></h1>
+  <p class="sub">Accede a 11 materiales completos — el libro "Mi Psicóloga Me Dijo" + 10 guías de sanación — para soltar lo que nunca fue tuyo y volver a ti.</p>
+  <a href="#precio" class="cta-btn cta-urgent">Quiero empezar a sanar hoy</a>
+  <div class="trust-row">
+    <span>🔒 Compra segura</span>
+    <span>⚡ Acceso inmediato</span>
+    <span>✅ Garantía de 7 días</span>
   </div>
-  <div class="hero-image-full reveal">
-    <img src="img/mockup-libros.jpg" alt="Los 11 materiales de Mujeres que Sanan">
+  <div class="hero-img">
+    <img src="https://www.mujeresquesanan.site/img/mockup-libros.jpg" alt="Los 11 materiales de Mujeres que Sanan">
   </div>
 </section>
 
-<div class="stats-bar">
-  <div class="stats-grid">
-    <div class="stat-item"><div class="stat-num">11</div><div class="stat-lbl">Materiales incluidos</div></div>
-    <div class="stat-item"><div class="stat-num">De por vida</div><div class="stat-lbl">Acceso sin caducidad</div></div>
-    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-lbl">Pago seguro</div></div>
-    <div class="stat-item"><div class="stat-num">PDF</div><div class="stat-lbl">Entrega inmediata</div></div>
-  </div>
+<div class="stats reveal">
+  <div class="stat"><b>11</b><span>Materiales incluidos</span></div>
+  <div class="stat"><b>De por vida</b><span>Acceso sin caducidad</span></div>
+  <div class="stat"><b>100%</b><span>Pago seguro</span></div>
+  <div class="stat"><b>PDF</b><span>Entrega inmediata</span></div>
 </div>
 
-<section id="servicios">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Lo que recibes</span>
-      <h2>Un proceso completo <em>en tres pilares</em></h2>
-      <p>No es contenido suelto. Es una ruta pensada para llevarte del agotamiento emocional a la versión más libre de ti.</p>
-    </div>
+<div class="wrap">
 
-    <div class="materials-grid">
-      <div class="material-btn"><div class="material-icon">📖</div><div class="material-name">Mi Psicóloga Me Dijo</div></div>
-      <div class="material-btn"><div class="material-icon">💔</div><div class="material-name">Basta de Amores de Mierda</div></div>
-      <div class="material-btn"><div class="material-icon">🕯️</div><div class="material-name">Caminando a Través del Duelo</div></div>
-      <div class="material-btn"><div class="material-icon">🕊️</div><div class="material-name">Hoy Te Dejo Ir</div></div>
-      <div class="material-btn"><div class="material-icon">🍃</div><div class="material-name">Me Cansé de Ti</div></div>
-      <div class="material-btn"><div class="material-icon">👑</div><div class="material-name">Merezco Mucho Más</div></div>
-      <div class="material-btn"><div class="material-icon">☀️</div><div class="material-name">Soltar Para Sanar</div></div>
-      <div class="material-btn"><div class="material-icon">🌙</div><div class="material-name">Vuelvo a Mí</div></div>
-      <div class="material-btn"><div class="material-icon">💫</div><div class="material-name">Tú Eres Tu Prioridad</div></div>
-      <div class="material-btn"><div class="material-icon">🔍</div><div class="material-name">Tests de Autoconocimiento</div></div>
-      <div class="material-btn"><div class="material-icon">📅</div><div class="material-name">Retos de 21 Días</div></div>
-    </div>
-
-   
+  <div class="letter reveal">
+    <p class="lead">Quizás te levantas cada día con una sensación de peso en el pecho que no sabes explicar.</p>
+    <p>Sonríes en las fotos, respondes "bien" cuando te preguntan cómo estás, sigues cumpliendo con el trabajo, la casa, los hijos, la pareja...</p>
+    <p>Pero por dentro sientes que algo no está resuelto. Que cargas heridas de relaciones pasadas, de tu infancia, de vínculos que te dejaron marcas que nadie ve.</p>
+    <p>Y lo peor: sientes que <strong>no tienes tiempo ni dinero para terapia</strong>, o que "eso no es tan grave como para necesitar ayuda profesional".</p>
+    <div class="fold-mark"></div>
+    <p>Ese dolor que no se atiende, no desaparece solo. Se transforma en ansiedad antes de dormir, en explosiones de rabia que después te hacen sentir culpable, en relaciones donde repites los mismos patrones que juraste no repetir.</p>
   </div>
-</section>
 
-<section class="interior-section">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Así se ven por dentro</span>
-      <h2>Cada guía, página a página <em>en tu pantalla</em></h2>
-      <p>Diseño cuidado, tipografía cálida y ejercicios reales. Ábrelas desde el celular, la tablet o el computador.</p>
-    </div>
-    <div class="tablet-grid">
-      <div class="reveal">
-        <div class="tablet-frame">
-          <div class="tablet-cam"></div>
-          <div class="tablet-screen"><img src="img/page-psicologa.jpg" alt="Página interior de Mi Psicóloga Me Dijo"></div>
-        </div>
-        <div class="tablet-label">Mi Psicóloga Me Dijo</div>
-      </div>
-      <div class="reveal">
-        <div class="tablet-frame">
-          <div class="tablet-cam"></div>
-          <div class="tablet-screen"><img src="img/page-prioridad.jpg" alt="Página interior de Tú Eres Tu Prioridad"></div>
-        </div>
-        <div class="tablet-label">Tú Eres Tu Prioridad</div>
-      </div>
-      <div class="reveal">
-        <div class="tablet-frame">
-          <div class="tablet-cam"></div>
-          <div class="tablet-screen"><img src="img/page-merezco.jpg" alt="Página interior de Merezco Mucho Más"></div>
-        </div>
-        <div class="tablet-label">Merezco Mucho Más</div>
-      </div>
-      <div class="reveal">
-        <div class="tablet-frame">
-          <div class="tablet-cam"></div>
-          <div class="tablet-screen"><img src="img/page-canse.jpg" alt="Página interior de Me Cansé de Ti"></div>
-        </div>
-        <div class="tablet-label">Me Cansé de Ti</div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="section reveal">
+    <span class="eyebrow-sm">Lo que recibes</span>
+    <h2>Un proceso completo en tres pilares</h2>
+    <p class="section-sub">No es contenido suelto. Es una ruta pensada para llevarte del agotamiento emocional a la versión más libre de ti.</p>
+    <ul class="heal-list">
+      <li><span class="ico">📖</span> Mi Psicóloga Me Dijo</li>
+      <li><span class="ico">💔</span> Basta de Amores de Mierda</li>
+      <li><span class="ico">🕯️</span> Caminando a Través del Duelo</li>
+      <li><span class="ico">🕊️</span> Hoy Te Dejo Ir</li>
+      <li><span class="ico">🍃</span> Me Cansé de Ti</li>
+      <li><span class="ico">👑</span> Merezco Mucho Más</li>
+      <li><span class="ico">☀️</span> Soltar Para Sanar</li>
+      <li><span class="ico">🌙</span> Vuelvo a Mí</li>
+      <li><span class="ico">💫</span> Tú Eres Tu Prioridad</li>
+      <li><span class="ico">🔍</span> Tests de Autoconocimiento</li>
+      <li><span class="ico">📅</span> Retos de 21 Días</li>
+    </ul>
+  </section>
 
-<section class="ad-section">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">¿Te suena familiar?</span>
-      <h2>Tu cuerpo y tu mente <em>llevan tiempo pidiéndote un cambio</em></h2>
-    </div>
-    <div class="ad-grid">
-      <div class="ad-card antes reveal">
+  <section class="section reveal">
+    <span class="eyebrow-sm">¿Te suena familiar?</span>
+    <h2>Tu cuerpo y tu mente llevan tiempo pidiéndote un cambio</h2>
+    <div class="grid-2">
+      <div class="compare-card antes">
         <h4>Antes</h4>
         <ul>
           <li>Cargar culpas y silencios que no son tuyos</li>
@@ -504,7 +366,7 @@
           <li>Sentirte sola incluso rodeada de gente</li>
         </ul>
       </div>
-      <div class="ad-card despues reveal">
+      <div class="compare-card despues">
         <h4>Después</h4>
         <ul>
           <li>Nombrar lo que sientes sin miedo</li>
@@ -515,186 +377,153 @@
         </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Mujeres que deciden sanar</span>
-      <h2>El camino empieza <em>con una decisión</em></h2>
+  <section class="section reveal">
+    <span class="eyebrow-sm">Mujeres que deciden sanar</span>
+    <h2>El camino empieza con una decisión</h2>
+    <div class="grid-2 testimonial-slot">
+      <img src="https://www.mujeresquesanan.site/img/testimonio-1.jpg" alt="Cliente real agradeciendo su compra por WhatsApp">
+      <img src="https://www.mujeresquesanan.site/img/testimonio-2.jpg" alt="Cliente real agradeciendo su compra por WhatsApp">
     </div>
-    <div class="testi-grid">
-      <div class="reveal">
-        <div class="testi-shot"><img src="img/testimonio-1.jpg" alt="Cliente real agradeciendo su compra por WhatsApp"></div>
-        <p class="testi-caption">Entrega real vía WhatsApp</p>
-      </div>
-      <div class="reveal">
-        <div class="testi-shot"><img src="img/testimonio-2.jpg" alt="Cliente real agradeciendo su compra por WhatsApp"></div>
-        <p class="testi-caption">Entrega real vía WhatsApp</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="value-section" id="precio">
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow" style="background:var(--gold);color:var(--plum);padding:8px 18px;border-radius:100px;">Por una contribución simbólica</span>
-      <h2>Todo esto <em>por lo que puedas dar hoy</em></h2>
-      <p>Sabemos que no todas atraviesan el mismo momento económico. Por eso, en vez de un precio fijo, te dejamos elegir tu contribución consciente.</p>
-    </div>
+  <section class="section reveal" id="precio">
+    <span class="eyebrow-sm">Por una contribución simbólica</span>
+    <h2>Todo esto por lo que puedas dar hoy</h2>
+    <p class="section-sub">Sabemos que no todas atraviesan el mismo momento económico. Por eso, en vez de un precio fijo, te dejamos elegir tu contribución consciente.</p>
 
-    <div class="value-stack reveal">
-      <div class="value-row"><span>Libro principal "Mi Psicóloga Me Dijo"</span><span class="price">$27</span></div>
-      <div class="value-row"><span>10 guías de sanación completas</span><span class="price">$24</span></div>
-      <div class="value-row"><span>Tests de autoconocimiento</span><span class="price">$9</span></div>
-      <div class="value-row"><span>Retos de 21 días y afirmaciones</span><span class="price">$9</span></div>
-      <div class="value-row"><span>Acceso permanente sin vencimiento</span><span class="price">$12</span></div>
-    </div>
-    <div class="value-total">
-      <span>Valor total del material</span>
-      <strong>$81 USD</strong>
-    </div>
-
-    <div class="pricing-intro">
-      <span class="eyebrow">Elige tu contribución</span>
-      <h3>¿Cuánto puedes aportar hoy?</h3>
-      <p>Las 5 opciones dan acceso al mismo material completo. Elige la que se ajuste a tu momento.</p>
-    </div>
+    <ul class="value-list">
+      <li><span>Libro principal "Mi Psicóloga Me Dijo"</span><span>$27</span></li>
+      <li><span>10 guías de sanación completas</span><span>$24</span></li>
+      <li><span>Tests de autoconocimiento</span><span>$9</span></li>
+      <li><span>Retos de 21 días y afirmaciones</span><span>$9</span></li>
+      <li><span>Acceso permanente sin vencimiento</span><span>$12</span></li>
+    </ul>
+    <p class="value-total">Valor total del material <strong style="text-decoration: line-through; text-decoration-color: #C0392B; text-decoration-thickness: 2px; color: var(--ink-soft);">$81 USD</strong></p>
 
     <div class="price-grid">
-      <div class="price-card reveal">
-        <div class="tier-name">Contribución inicial</div>
-        <div class="tier-amount">$4.99<span>USD</span></div>
-        <div class="tier-note">Acceso completo a los 11 materiales</div>
-        <a href="https://whop.com/checkout/plan_roiV8Z5W6e5s9" class="tier-btn">Sí, me lo merezco</a>
+      <div class="price-card">
+        <div>
+          <div class="label">Contribución inicial</div>
+          <div class="amount">$4.99 <span style="font-size:13px;color:var(--ink-soft);">USD</span></div>
+          <div class="desc">Acceso completo a los 11 materiales</div>
+        </div>
+        <a class="buy cta-urgent" href="https://whop.com/checkout/plan_roiV8Z5W6e5s9">Sí, me lo merezco</a>
       </div>
-      <div class="price-card featured reveal">
-        <div class="price-badge">Más elegida</div>
-        <div class="tier-name">Contribución consciente</div>
-        <div class="tier-amount">$7.99<span>USD</span></div>
-        <div class="tier-note">Acceso completo + apoyas a que más mujeres reciban el material</div>
-        <a href="https://whop.com/checkout/plan_OeQnonnZKPDsW" class="tier-btn">Sí, me lo merezco</a>
+
+      <div class="price-card featured">
+        <span class="badge">Más elegida</span>
+        <div>
+          <div class="label">Contribución consciente</div>
+          <div class="amount">$7.99 <span style="font-size:13px;color:var(--ink-soft);">USD</span></div>
+          <div class="desc">Acceso completo + apoyas a que más mujeres reciban el material</div>
+        </div>
+        <a class="buy cta-urgent" href="https://whop.com/checkout/plan_OeQnonnZKPDsW">Sí, me lo merezco</a>
       </div>
-      <div class="price-card reveal">
-        <div class="tier-name">Contribución generosa</div>
-        <div class="tier-amount">$9.99<span>USD</span></div>
-        <div class="tier-note">Acceso completo + tu aporte sostiene este proyecto</div>
-        <a href="https://whop.com/checkout/plan_MkucRf4aSSeLa" class="tier-btn">Sí, me lo merezco</a>
+
+      <div class="price-card">
+        <div>
+          <div class="label">Contribución generosa</div>
+          <div class="amount">$9.99 <span style="font-size:13px;color:var(--ink-soft);">USD</span></div>
+          <div class="desc">Acceso completo + tu aporte sostiene este proyecto</div>
+        </div>
+        <a class="buy" href="https://whop.com/checkout/plan_MkucRf4aSSeLa">Sí, me lo merezco</a>
       </div>
-      <div class="price-card reveal">
-        <div class="tier-name">Contribución de gratitud</div>
-        <div class="tier-amount">$12.99<span>USD</span></div>
-        <div class="tier-note">Acceso completo + regalas el material a otra mujer</div>
-        <a href="https://whop.com/checkout/plan_QQ6lRtd1s19YZ" class="tier-btn">Sí, me lo merezco</a>
+
+      <div class="price-card">
+        <div>
+          <div class="label">Contribución de gratitud</div>
+          <div class="amount">$12.99 <span style="font-size:13px;color:var(--ink-soft);">USD</span></div>
+          <div class="desc">Acceso completo + regalas el material a otra mujer</div>
+        </div>
+        <a class="buy" href="https://whop.com/checkout/plan_QQ6lRtd1s19YZ">Sí, me lo merezco</a>
       </div>
-      <div class="price-card reveal">
-        <div class="tier-name">Contribución total</div>
-        <div class="tier-amount">$14.99<span>USD</span></div>
-        <div class="tier-note">Acceso completo + tu máximo apoyo a este proyecto</div>
-        <a href="https://whop.com/checkout/plan_FsuxzDuY0tVxO" class="tier-btn">Sí, me lo merezco</a>
+
+      <div class="price-card">
+        <div>
+          <div class="label">Contribución total</div>
+          <div class="amount">$14.99 <span style="font-size:13px;color:var(--ink-soft);">USD</span></div>
+          <div class="desc">Acceso completo + tu máximo apoyo a este proyecto</div>
+        </div>
+        <a class="buy" href="https://whop.com/checkout/plan_FsuxzDuY0tVxO">Sí, me lo merezco</a>
       </div>
     </div>
-    <p class="price-note-below">Pago único · Entrega inmediata en PDF · Acceso permanente sin vencimiento</p>
 
-    <div class="pay-icons">
-      <span>VISA</span><span>Mastercard</span><span>Amex</span><span>PayPal</span>
-    </div>
-  </div>
-</section>
+    <p class="pay-note">Pago único · Entrega inmediata en PDF · Acceso permanente sin vencimiento<br>VISA · Mastercard · Amex · PayPal</p>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="guarantee reveal">
-      <div class="seal">Garantía<br>7 días</div>
+  <section class="section reveal">
+    <div class="guarantee">
+      <div class="badge-circle">Garantía<br>7 días</div>
       <div>
-        <h3>Tu tranquilidad, primero</h3>
-        <p>Si dentro de los primeros 7 días sientes que este material no es para ti, escríbenos y lo resolvemos juntas. No queremos que dudes en darte esta oportunidad.</p>
+        <h3 style="margin:0 0 6px; font-size:18px;">Tu tranquilidad, primero</h3>
+        <p style="margin:0; color:var(--ink-soft); font-size:14.5px;">Si dentro de los primeros 7 días sientes que este material no es para ti, escríbenos y lo resolvemos juntas. No queremos que dudes en darte esta oportunidad.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="origin">
-  <div class="container">
-    <div class="origin-grid">
-      <div class="origin-img reveal">
-        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&q=80&fit=crop&crop=top" alt="Mujer segura y empoderada">
-      </div>
-      <div class="reveal">
-        <span class="eyebrow">El origen</span>
-        <h2 style="font-size:30px;font-weight:500;color:var(--plum);margin:0 0 16px;">Nació de un dolor real, <em>no de una idea.</em></h2>
-        <p>Hubo un momento en que yo también cargaba con culpas que no eran mías. Callaba lo que merecía ser dicho. Me había perdido tanto en los demás que ya no sabía quién era yo cuando nadie me necesitaba.</p>
-        <blockquote>"No tienes que seguir cargando sola con algo que nunca fue tuyo."</blockquote>
-        <p>Esa frase me la dijo mi psicóloga, y me rompió por dentro. También me liberó. Por eso existe Mujeres que Sanan: porque me pregunté cuántas mujeres más estaban exactamente donde yo estaba, sin acceso a las herramientas que merecían.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <section class="section reveal">
+    <span class="eyebrow-sm">El origen</span>
+    <h2>Nació de un dolor real, no de una idea</h2>
+    <p>Hubo un momento en que yo también cargaba con culpas que no eran mías. Callaba lo que merecía ser dicho. Me había perdido tanto en los demás que ya no sabía quién era yo cuando nadie me necesitaba.</p>
+    <div class="quote-block">"No tienes que seguir cargando sola con algo que nunca fue tuyo."</div>
+    <p>Esa frase me la dijo mi psicóloga, y me rompió por dentro. También me liberó. Por eso existe Mujeres que Sanan: porque me pregunté cuántas mujeres más estaban exactamente donde yo estaba, sin acceso a las herramientas que merecían.</p>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="section-head">
-      <span class="eyebrow">Lo más preguntado</span>
-      <h2>Preguntas <em>frecuentes</em></h2>
-    </div>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>¿Cómo recibo el material después de pagar?</summary>
-        <p>Justo después de tu compra recibes acceso inmediato para descargar los 11 PDF, sin esperas ni pasos adicionales.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Por qué hay varios precios para el mismo material?</summary>
-        <p>Creemos que el acceso a herramientas de sanación no debería depender de cuánto dinero tengas. Por eso puedes elegir la contribución que se ajuste a tu momento actual — todas dan acceso al mismo material completo.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Es un libro de psicología clínica?</summary>
-        <p>No. Es un material de acompañamiento y bienestar emocional, no un tratamiento médico o psicológico. Si estás atravesando una crisis emocional grave, te recomendamos buscar apoyo profesional.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿El acceso tiene vencimiento?</summary>
-        <p>No. Pagas una sola vez y el material es tuyo para siempre, sin suscripciones ni pagos recurrentes.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Puedo leerlo desde el celular?</summary>
-        <p>Sí, todos los PDF están optimizados para verse bien en celular, tablet o computador.</p>
-      </details>
-      <details class="faq-item">
-        <summary>¿Tienen garantía?</summary>
-        <p>Sí, cuentas con 7 días de garantía. Si sientes que no es para ti, escríbenos y te ayudamos.</p>
-      </details>
-    </div>
-  </div>
-</section>
+  <section class="section reveal">
+    <span class="eyebrow-sm">Lo más preguntado</span>
+    <h2 style="margin-bottom:28px;">Preguntas frecuentes</h2>
+    <details>
+      <summary>¿Cómo recibo el material después de pagar?</summary>
+      <p>Justo después de tu compra recibes acceso inmediato para descargar los 11 PDF, sin esperas ni pasos adicionales.</p>
+    </details>
+    <details>
+      <summary>¿Por qué hay varios precios para el mismo material?</summary>
+      <p>Creemos que el acceso a herramientas de sanación no debería depender de cuánto dinero tengas. Por eso puedes elegir la contribución que se ajuste a tu momento actual — todas dan acceso al mismo material completo.</p>
+    </details>
+    <details>
+      <summary>¿Es un libro de psicología clínica?</summary>
+      <p>No. Es un material de acompañamiento y bienestar emocional, no un tratamiento médico o psicológico. Si estás atravesando una crisis emocional grave, te recomendamos buscar apoyo profesional.</p>
+    </details>
+    <details>
+      <summary>¿El acceso tiene vencimiento?</summary>
+      <p>No. Pagas una sola vez y el material es tuyo para siempre, sin suscripciones ni pagos recurrentes.</p>
+    </details>
+    <details>
+      <summary>¿Puedo leerlo desde el celular?</summary>
+      <p>Sí, todos los PDF están optimizados para verse bien en celular, tablet o computador.</p>
+    </details>
+    <details>
+      <summary>¿Tienen garantía?</summary>
+      <p>Sí, cuentas con 7 días de garantía. Si sientes que no es para ti, escríbenos y te ayudamos.</p>
+    </details>
+  </section>
 
-<section class="final-cta">
-  <div class="container">
-    <h2 style="font-size:30px;font-weight:500;color:var(--plum);">"El primer paso para sanar es dejar de hacerte la fuerte."</h2>
-    <a href="#precio" class="btn-primary">Sí, me lo merezco</a>
+  <div class="letter reveal" style="text-align:center;">
+    <p class="lead" style="margin-bottom:24px;">"El primer paso para sanar es dejar de hacerte la fuerte."</p>
+    <a href="#precio" class="cta-btn cta-urgent">Sí, me lo merezco</a>
   </div>
-</section>
+
+</div>
 
 <footer>
-  <div class="container">
-    <div class="logo">Mujeres que Sanan</div>
-    <div style="font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:#E7C9D4;max-width:420px;margin:0 auto;">"Enamórate de ti, de la vida y luego de quien tú quieras." — Frida Kahlo</div>
-    <div class="flinks">
-      <a href="https://www.facebook.com/Mujerequesanan/">Facebook</a>
-      <a href="terminos.html">Términos y Condiciones</a>
-      <a href="privacidad.html">Política de Privacidad</a>
-    </div>
-    <div class="fine">© 2026 Mujeres que Sanan · Material de sanación para mujeres · Colombia</div>
+  <p class="ps">Mujeres que Sanan</p>
+  <p style="font-style:italic;">"Enamórate de ti, de la vida y luego de quien tú quieras." — Frida Kahlo</p>
+  <div class="foot-links">
+    <a href="https://www.facebook.com/Mujerequesanan/">Facebook</a>
+    <a href="/terminos.html">Términos y Condiciones</a>
+    <a href="/privacidad.html">Política de Privacidad</a>
   </div>
+  <p style="margin-top:20px;">© 2026 Mujeres que Sanan · Material de sanación para mujeres · Colombia</p>
 </footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el=>obs.observe(el));
 </script>
 
 </body>
